@@ -1,4 +1,5 @@
 -const games = gameData.results
+
 doctype html
 html(lang='en')
   head
@@ -6,8 +7,9 @@ html(lang='en')
     style
       include ../stylesheets/style.css
   body
-    h1 Hello, World!
-    div.remark
-      p Pug rocks!!!
+    h1 The Good Games
+    div.container
       each game of games
-        li= game.name
+        div
+          ul= game.name
+          li= game.platforms[0].platform.name
