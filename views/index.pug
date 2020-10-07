@@ -1,0 +1,13 @@
+-const games = gameData.results
+doctype html
+html(lang='en')
+  head
+    title Rendering a static data object with Node.js, Express, and Pug
+    style
+      include ../stylesheets/style.css
+  body
+    h1 Hello, World!
+    div.remark
+      p Pug rocks!!!
+      each game of games
+        li= game.name
