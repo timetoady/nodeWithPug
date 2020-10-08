@@ -1,20 +1,90 @@
 body {
     background-color: #f2f2f2;
+    padding: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
 .container {
     display: grid;
     gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
 }
 
-.container li, ul {
+.container li,
+ul {
     list-style: none;
     padding-left: 0;
 }
 
-div{
-    background-color: rgba(131, 78, 14, 0.719);
+div {
+    background-color: rgba(14, 55, 131, 0.719);
     color: white;
     padding: .5rem
+}
+
+figure {
+    position: relative;
+
+}
+
+figure .img-bg {
+    display: block;
+    /* height: 0; */
+    /* width: 30vw;
+    padding-bottom: 50vh; */
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+figcaption {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    max-width: 90%;
+    height: 100%;
+    margin: auto;
+    padding: 0 5%;
+    transform: translateY(-50%);
+    text-align: right;
+    color: #f2f2f2;
+    background:  linear-gradient(135deg, rgba(76,76,76,0.1) 0%,rgba(89,89,89,0.19) 12%,rgba(102,102,102,0.28) 25%,rgba(71,71,71,0.38) 39%,rgba(44,44,44,0.46) 50%,rgba(0,0,0,0.47) 51%,rgba(17,17,17,0.53) 60%,rgba(43,43,43,0.64) 76%,rgba(28,28,28,0.75) 91%,rgba(20,20,20,0.81) 99%,rgba(19,19,19,0.81) 100%);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+figcaption ul{
+    vertical-align: text-bottom;
+    
+}
+
+figcaption p {
+    margin-top: 30%;
+}
+
+@media (max-width: 1010px) {
+    figcaption ul, li{
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 871px) {
+    figcaption ul, li{
+        font-size: 1.2rem;
+    }
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 733px) {
+    figcaption ul, li{
+        font-size: .8rem;
+    }
+
 }

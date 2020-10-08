@@ -1,5 +1,12 @@
 -const games = gameData.results
+mixin img-bg(src, alt)
+  img.img-bg(
+    src=src,
+    style=`background-image: url('${src}'), linear-gradient(135deg, rgba(76,76,76,1) 0%,rgba(89,89,89,1) 12%,rgba(102,102,102,1) 25%,rgba(71,71,71,1) 39%,rgba(44,44,44,1) 50%,rgba(0,0,0,1) 51%,rgba(17,17,17,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(19,19,19,1) 100%);`,
+    alt=alt
+  )&attributes(attributes)
 
+  
 doctype html
 html(lang='en')
   head
@@ -11,5 +18,15 @@ html(lang='en')
     div.container
       each game of games
         div
-          ul= game.name
-          li= game.platforms[0].platform.name
+          figure
+            +img-bg(
+              game.background_image, 
+              game.name
+              -console.log(game.developers)
+           )(class="bgImages")
+            figcaption
+              ul= game.name
+                p
+                li= game.platforms[0].platform.name
+                li= `Release date: ${game.released}`
+
